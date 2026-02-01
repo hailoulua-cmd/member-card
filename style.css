@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
   background: #faf7f2;
+  overflow-x: hidden;
 }
 
 .wrap {
@@ -45,12 +46,11 @@ body {
   inset: 0;
   border-radius: 18px;
   backface-visibility: hidden;
-  background: linear-gradient(135deg, #fffaf3, #fff1df);
+  background: #ffffff;
   box-shadow: 0 14px 32px rgba(0,0,0,.18);
   padding: 18px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 /* 裏面 */
@@ -60,45 +60,63 @@ body {
   text-align: center;
 }
 
-/* 表面要素 */
+/* タイトル */
 .title {
   font-size: 18px;
   letter-spacing: .35em;
   font-weight: 600;
   text-align: center;
+  margin-bottom: 10px;
 }
 
-.number {
-  font-size: 12px;
-  opacity: .7;
-}
-
-.paws {
+/* 中央レイアウト */
+.center-row {
+  flex: 1;
   display: flex;
-  gap: 10px;
+  align-items: center;
+  justify-content: center; /* ←変更 */
+  gap: 12px;               /* ←間隔は gap で管理 */
+  overflow: hidden;        /* ←重要 */
 }
 
-.paws img {
-  width: 26px;
+
+/* 足跡（大きめ） */
+.paw {
+  width: clamp(90px, 24vw, 150px);
+  max-width: 40%; /* ←これ */
+  opacity: 0.85;
 }
 
-.name {
+
+.paw.left,
+.paw.right {
+  transform: translateY(0);
+}
+
+/* 中央テキスト */
+.center-text {
+  text-align: center;
+}
+
+.center-text .number {
+  font-size: 13px;
+  opacity: .7;
+  margin-bottom: 6px;
+}
+
+.center-text .name {
   font-size: 20px;
   font-weight: 600;
-}
-
-/* 靴底（透かし） */
-.sole {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  width: 72px;
-  opacity: .12;
 }
 
 /* 裏面メッセージ */
 .back-message {
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.9;
   padding: 0 16px;
+}
+
+.name2{
+  margin-top: 13px;
+  font-size: 13px;
 }

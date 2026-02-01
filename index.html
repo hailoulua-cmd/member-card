@@ -16,16 +16,22 @@
       <!-- 表面 -->
       <div class="card-face card-front">
         <div class="title">足 跡 証</div>
-        <div class="number">No. 0037</div>
 
-        <div class="paws">
-          <img src="paw.svg" alt="paw">
-          <img src="paw.svg" alt="paw">
-          <img src="paw.svg" alt="paw">
+        <div class="center-row">
+          <!-- 左の足跡 -->
+          <img class="paw left" src="asiato2.png" alt="paw left">
+
+          <!-- 中央テキスト -->
+          <div class="center-text">
+            <div class="number">No. 001</div>
+            <div class="name">謎の人物</div>
+            <div class="name2">吠狼 ルア</div>
+          </div>
+          
+
+          <!-- 右の足跡 -->
+          <img class="paw right" src="asiato.png" alt="paw right">
         </div>
-
-        <div class="name">吠狼 ルア</div>
-        <img class="sole" src="sole.svg" alt="sole">
       </div>
 
       <!-- 裏面 -->
@@ -44,7 +50,6 @@
 
 <script>
   const card = document.getElementById('card');
-
   card.addEventListener('click', () => {
     card.classList.toggle('is-flipped');
   });
