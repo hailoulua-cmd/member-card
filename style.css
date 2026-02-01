@@ -82,9 +82,9 @@ body {
 
 /* 足跡（大きめ） */
 .paw {
-  width: clamp(90px, 24vw, 150px);
-  max-width: 40%; /* ←これ */
-  opacity: 0.85;
+  width: clamp(100px, 26vw, 150px);
+  max-width: 45%;
+  flex-shrink: 0;
 }
 
 
@@ -96,6 +96,7 @@ body {
 /* 中央テキスト */
 .center-text {
   text-align: center;
+  white-space: nowrap;
 }
 
 .center-text .number {
@@ -119,6 +120,4 @@ body {
 .name2{
   margin-top: 13px;
   font-size: 13px;
-  opacity: .7;
-
 }
