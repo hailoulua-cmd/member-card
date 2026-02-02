@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>足跡証</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="card black" id="card">
+
+
+    <div class="card-inner">
+
+      <!-- 表面 -->
+      <div class="card-face card-front">
+        <div class="title">足 跡 証</div>
+
+        <div class="center-row">
+          <!-- 左の足跡 -->
+          <img class="paw left" src="asiato2.png" alt="paw left">
+
+          <!-- 中央テキスト -->
+          <div class="center-text">
+            <div class="number">No. 001</div>
+            <div class="name">視聴者１</div>
+            <div class="name2">吠狼 ルア</div>
+          </div>
+          
+
+          <!-- 右の足跡 -->
+          <img class="paw right" src="asiato.png" alt="paw right">
+        </div>
+      </div>
+
+      <!-- 裏面 -->
+      <div class="card-face card-back">
+<div class="back-message">
+            Thanks for spending time with me.<br>
+  ここに確かに足跡を残してくれた君へ<br><br>
+  吠狼ルアという存在が続く限り<br>
+  君が迷わず帰ってこられる居場所を<br>
+  この名にかけて、誓います。
+</div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<section class="message-section">
+  <div class="message-box">
+    <p>
+      このカードは<br>
+      君がここに残してくれた<br>
+      大切な足跡の証
+    </p>
+    <p class="small">
+      出会ってくれて<br>
+      ありがとう<br>
+      これからも素敵な思い出を<br>
+      君と重ねていけますように<br><br>
+      君が笑顔になれる場所であり続けられますように<br>
+      これからもよろしくね
+    </p>
+  </div>
+</section>
+
+<script>
+  const card = document.getElementById('card');
+  card.addEventListener('click', () => {
+    card.classList.toggle('is-flipped');
+  });
+</script>
+<script>
+  const messageBox = document.querySelector('.message-box');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    },
+    {
+      threshold: 0.1
+    }
+  );
+
+  observer.observe(messageBox);
+</script>
+
+
+</body>
+</html>
