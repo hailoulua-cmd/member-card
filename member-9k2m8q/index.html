@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>足跡証</title>
+  <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="card" id="card">
+    <div class="card-inner">
+
+      <!-- 表面 -->
+      <div class="card-face card-front">
+        <div class="title">足 跡 証</div>
+
+        <div class="center-row">
+          <!-- 左の足跡 -->
+          <img class="paw left" src="../img/asiato2.png" alt="paw left">
+
+          <!-- 中央テキスト -->
+          <div class="center-text">
+            <div class="number">No. 001</div>
+            <div class="name">なぞ</div>
+            <div class="name2">吠狼 ルア</div>
+          </div>
+          
+
+          <!-- 右の足跡 -->
+          <img class="paw right" src="../img/asiato.png" alt="paw right">
+        </div>
+      </div>
+
+      <!-- 裏面 -->
+      <div class="card-face card-back">
+        <div class="back-message">
+          Thanks for spending time with me.<br>
+          これからも君と一緒に、<br>
+          足跡を重ねていけますように！
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const card = document.getElementById('card');
+  card.addEventListener('click', () => {
+    card.classList.toggle('is-flipped');
+  });
+</script>
+
+</body>
+</html>
