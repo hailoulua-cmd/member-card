@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-/* body の背景は消すかシンプルに */
+/* まずbodyは背景なしにして、レイアウトだけ残す */
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
@@ -13,20 +13,18 @@ body {
 /* 背景画像＋半透明オーバーレイを ::before に設定 */
 body::before {
   content: "";
-  position: fixed;
-  top: 0; left: 0;
+  position: fixed;  /* スクロールしても固定 */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: url('https://hailoulua-cmd.github.io/member-card/img/back.jpg') center/cover no-repeat;
   background-size: cover;
-  background-color: rgba(255, 255, 255, 0.3); /* 半透明 */
-  background-blend-mode: lighten; /* 写真に白半透明を重ねる */
+  background-color: rgba(255,255,255,0.3); /* 半透明オーバーレイ */
+  background-blend-mode: lighten;
   pointer-events: none;
-  z-index: -1;
+  z-index: -1; /* 必ず-1にして、カードやメッセージの下に */
 }
-
-
-
 
 .wrap {
   min-height: 100svh;
