@@ -6,7 +6,7 @@
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
-  background: url('../img/back.png') no-repeat center center fixed; /* ←写真ファイル名を指定 */
+  background: url('https://hailoulua-cmd.github.io/member-card/img/back.jpg) no-repeat center center fixed; /* ←写真ファイル名を指定 */
   background-size: cover; /* 画面全体に拡大縮小 */
   overflow-x: hidden;
   position: relative;
