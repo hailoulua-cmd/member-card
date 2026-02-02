@@ -121,3 +121,232 @@ body {
   margin-top: 13px;
   font-size: 13px;
 }
+
+/* =====================
+   ブロンズカード（白抑え版）
+===================== */
+.card.bronze .card-face {
+  background: linear-gradient(
+    135deg,
+    #e8d3bf,  /* ← 白をやめて薄いブロンズ */
+    #c89b6a   /* ← しっかりブロンズ */
+  );
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.card.bronze .title,
+.card.bronze .name,
+.card.bronze .name2 {
+  color: #4a2f18;
+}
+
+.card.bronze .number {
+  color: #5b3a1e;
+}
+
+.card.bronze .paw {
+  filter: sepia(45%) saturate(130%);
+}
+
+
+/* =====================
+   ゴールドカード
+===================== */
+.card.gold .card-face {
+  background: linear-gradient(
+    135deg,
+    #fff1b8,  /* ハイライト */
+    #e0b94e,  /* ゴールド */
+    #c89b2c   /* 影 */
+  );
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45),
+    inset 0 0 18px rgba(255, 255, 255, 0.25);
+}
+
+/* 文字色：濃いめで可読性確保 */
+.card.gold .title,
+.card.gold .name,
+.card.gold .name2 {
+  color: #4a3600;
+}
+
+.card.gold .number {
+  color: #6b5200;
+}
+
+/* 足跡をゴールド染め */
+.card.gold .paw {
+  filter: sepia(55%) saturate(160%) brightness(1.05);
+}
+.card.gold .card-face::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.9),
+    rgba(255,215,120,0.6),
+    rgba(255,255,255,0.9)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+/* =====================
+   ゴールド：装飾フレーム
+===================== */
+.card.gold .card-front::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 14px;
+  pointer-events: none;
+
+  background:
+    /* 左上 */
+    linear-gradient(#e6cf8a, #e6cf8a) left top / 40px 2px no-repeat,
+    linear-gradient(#e6cf8a, #e6cf8a) left top / 2px 40px no-repeat,
+
+    /* 右上 */
+    linear-gradient(#e6cf8a, #e6cf8a) right top / 40px 2px no-repeat,
+    linear-gradient(#e6cf8a, #e6cf8a) right top / 2px 40px no-repeat,
+
+    /* 左下 */
+    linear-gradient(#e6cf8a, #e6cf8a) left bottom / 40px 2px no-repeat,
+    linear-gradient(#e6cf8a, #e6cf8a) left bottom / 2px 40px no-repeat,
+
+    /* 右下 */
+    linear-gradient(#e6cf8a, #e6cf8a) right bottom / 40px 2px no-repeat,
+    linear-gradient(#e6cf8a, #e6cf8a) right bottom / 2px 40px no-repeat;
+}
+
+/* =====================
+   ブラックカード（最上位）
+===================== */
+.card.black .card-face {
+  background: linear-gradient(
+    135deg,
+    #1a1a1a,
+    #0b0b0b 50%,
+    #1f1f1f
+  );
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* 文字色（表面） */
+.card.black .title,
+.card.black .name,
+.card.black .name2,
+.card.black .number,
+.card.black .rank {
+  color: #f0f0f0;
+}
+
+/* 足跡：彩度を落として上品に */
+.card.black .paw {
+  filter: grayscale(100%) brightness(1.1);
+  opacity: 0.9;
+}
+
+/* =====================
+   ブラック：艶レイヤー（光沢）
+===================== */
+.card.black .card-face::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.14),
+    rgba(255,255,255,0.04) 35%,
+    transparent 55%,
+    rgba(255,255,255,0.08)
+  );
+  pointer-events: none;
+}
+
+/* =====================
+   ブラック：インナーフレーム（二重構造）
+===================== */
+.card.black .card-front::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 12px;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.12)
+  );
+}
+
+/* =====================
+   ブラック：タップ時の反応
+===================== */
+.card.black:active .card-face {
+  box-shadow:
+    0 0 24px rgba(255,255,255,0.18);
+}
+
+/* =====================
+   ブラック：称号
+===================== */
+.card.black .rank {
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  opacity: 0.75;
+}
+
+/* =====================
+   ブラック：裏面テキスト可読性
+===================== */
+.card.black .card-back,
+.card.black .card-back .back-message {
+  color: #eaeaea;
+}
+
+
+
+/* =====================
+   スクロールメッセージ
+===================== */
+.message-section {
+  min-height: 30svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 24px;
+}
+
+.message-box {
+  max-width: 420px;
+  text-align: center;
+  line-height: 2;
+  font-size: 15px;
+  color: #333;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.message-box .small {
+  margin-top: 18px;
+  font-size: 13px;
+  opacity: 0.75;
+}
