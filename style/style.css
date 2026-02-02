@@ -15,7 +15,7 @@ body {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://hailoulua-cmd.github.io/member-card/img/back.jpg');
+  background-image: url('../img/back.png'); /* index.htmlから見てimgは1階層上 */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
